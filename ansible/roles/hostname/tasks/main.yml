@@ -1,0 +1,5 @@
+---
+- name: hostname
+  hostname:
+     name: nsapoold05
+

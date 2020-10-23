@@ -1,0 +1,6 @@
+---
+- name:
+  user:
+    name: marvin
+    password: $6$VrFllvZ5xzSzMQekCzIZCmdirGhdmXkyllJ4PBcdNHGq6hZAFHzbenZm69arviwyWRkslaacAKVxpilmibcWDuVIe.dz2421
+    home: /home/marvin

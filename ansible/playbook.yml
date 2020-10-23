@@ -1,0 +1,6 @@
+- hosts: vm-server
+  roles:
+      - role: hostname
+      - role: task04
+      - role: task06
+      - role: task07

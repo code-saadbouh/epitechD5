@@ -1,0 +1,16 @@
+---
+- name:
+  apt:
+    pkg:
+      - vim
+      - git
+      - tree
+      - htop
+      - curl
+      - emacs
+      - net-tools
+      - sudo
+      - make
+      - unzip
+      - python3
+      - python3-pip
