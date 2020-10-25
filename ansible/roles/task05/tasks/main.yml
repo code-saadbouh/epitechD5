@@ -1,0 +1,5 @@
+---
+- name: Change message
+  blockinfile:
+       path: ~/.bashrc
+       block: 'echo "Welcome mister X"'

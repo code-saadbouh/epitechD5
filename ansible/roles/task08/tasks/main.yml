@@ -1,0 +1,27 @@
+---
+- name: update apt
+  apt:
+     update_cache: yes
+- name: install php and required modules
+  apt:
+     state: latest
+     pkg:
+     - php
+     - php-cli
+     - php-fpm
+     - php-json
+     - php-pdo
+     - php-mysql
+     - php-zip
+     - php-gd
+     - php-mbstring
+     - php-curl
+     - php-xml
+     - php-pear
+     - php-bcmath
+     - php-intl
+- name: Change timeZone
+  lineinfile:
+        path: /etc/php/7.3/apache2/php.ini
+        regexp: '^;data.timezone ='
+        line: data.timezone = "Europe/Paris"

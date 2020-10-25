@@ -2,5 +2,5 @@
 - name:
   user:
     name: marvin
-    password: $6$VrFllvZ5xzSzMQekCzIZCmdirGhdmXkyllJ4PBcdNHGq6hZAFHzbenZm69arviwyWRkslaacAKVxpilmibcWDuVIe.dz2421
+    password: "{{ 'NsaPool42' | password_hash('sha512') }}"
     home: /home/marvin
