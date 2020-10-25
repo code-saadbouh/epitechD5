@@ -1,5 +1,5 @@
 ---
 - name: Change message
   blockinfile:
-       path: ~/.bashrc
+       path: /etc/profile
        block: 'echo "Welcome mister X"'

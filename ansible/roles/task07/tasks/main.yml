@@ -1,8 +1,22 @@
 ---
-- name: Install apache
-      apt: name=apache2 update_cache=yes state=latest
-
-#- name: Moove archive
-#  unarchive:
-#        src: app.zip
-#        dest: /var/www/
+- name: update apt
+  apt:
+     update_cache: yes
+- name: install apache and php module
+  apt:
+     state: latest
+     pkg:
+     - apache2
+     - libapache2-mod-php
+- name: create new apache root
+  shell:
+     chdir: /var/www/
+     cmd: "mkdir app"
+- name: unzip into apache2 root
+  unarchive:
+    src: ../files/app.zip
+    dest: /var/www/app/
+- name: disable default site
+  shell: "/usr/sbin/a2dissite 000-default.conf"
+- name: restart apache2
+  shell: "systemctl restart apache2"

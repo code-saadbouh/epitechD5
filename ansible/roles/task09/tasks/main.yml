@@ -1,0 +1,24 @@
+---
+# tasks file for task09
+- name: Install MariaDB Server
+  apt: name=mariadb-server state=latest update_cache=yes
+
+
+#- name: Create a new database with name "nsapool"
+#  community.mysql.mysql_db:
+#      name: nsapool
+#      state: present
+
+#- name: Copy database dump file
+#  copy:
+#    src: /var/www/app/nsapool.sql
+#    dest: /tm
+
+
+- name: Create database user with all database privileges
+  - mysql_user:
+     name: nsad04
+     password: 'E24h7UkA9HJhq5VM98pm7p5zmJpf8AK'
+     encrypted: yes
+     priv: '*.*:ALL'
+     state: present
